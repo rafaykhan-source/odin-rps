@@ -23,8 +23,8 @@ function playRound(playerChoice, computerChoice, scoreBoard) {
     PAPER: "SCISSORS",
     SCISSORS: "ROCK",
   };
-
   let result = "";
+
   if (playerChoice == computerChoice) {
     result = `${playerChoice} and ${computerChoice}. It's a tie!`;
   } else if (ruleSet[playerChoice] == computerChoice) {
@@ -34,6 +34,7 @@ function playRound(playerChoice, computerChoice, scoreBoard) {
     result = `You Win! ${playerChoice} beats ${computerChoice}.`;
     scoreBoard["player"]++;
   }
+
   return result;
 }
 
@@ -43,6 +44,7 @@ function playRound(playerChoice, computerChoice, scoreBoard) {
  */
 function getGameResult(scoreBoard) {
   let gameResult = "";
+
   if (scoreBoard["player"] > scoreBoard["computer"]) {
     gameResult = "Congratulations! You Win!";
   } else if (scoreBoard["player"] < scoreBoard["computer"]) {
@@ -61,7 +63,7 @@ function main() {
   };
 
   for (let i = 0; i < 5; i++) {
-    console.log(`Round ${i}!`)
+    console.log(`Round ${i}!`);
     const computerChoice = getComputerChoice();
     const playerChoice = "Rock".toUpperCase();
     const result = playRound(playerChoice, computerChoice, scoreBoard);
