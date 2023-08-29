@@ -36,6 +36,7 @@ function playRound(playerChoice, computerChoice, scoreBoard) {
   }
   return result;
 }
+
 /**
  * Returns the result of the game based on the score board.
  * @param {object} scoreBoard Game's score board.
@@ -54,10 +55,21 @@ function getGameResult(scoreBoard) {
 }
 
 function main() {
-  const computerChoice = getComputerChoice();
-  const playerChoice = "Rock".toUpperCase();
-  const result = playRound(playerChoice, computerChoice);
-  console.log(result);
+  const scoreBoard = {
+    computer: 0,
+    player: 0,
+  };
+
+  for (let i = 0; i < 5; i++) {
+    console.log(`Round ${i}!`)
+    const computerChoice = getComputerChoice();
+    const playerChoice = "Rock".toUpperCase();
+    const result = playRound(playerChoice, computerChoice, scoreBoard);
+    console.log(result);
+  }
+
+  const gameResult = getGameResult(scoreBoard);
+  console.log(gameResult);
 }
 
 main();
