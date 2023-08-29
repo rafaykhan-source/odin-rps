@@ -35,7 +35,10 @@ function playRound(playerChoice, computerChoice) {
 }
 
 function main() {
-    console.log("Hello World");
+  const computerChoice = getComputerChoice();
+  const playerChoice = "Rock".toUpperCase();
+  const result = playRound(playerChoice, computerChoice);
+  console.log(result);
 }
 
 main();
