@@ -36,6 +36,22 @@ function playRound(playerChoice, computerChoice, scoreBoard) {
   }
   return result;
 }
+/**
+ * Returns the result of the game based on the score board.
+ * @param {object} scoreBoard Game's score board.
+ */
+function getGameResult(scoreBoard) {
+  let gameResult = "";
+  if (scoreBoard["player"] > scoreBoard["computer"]) {
+    gameResult = "Congratulations! You Win!";
+  } else if (scoreBoard["player"] < scoreBoard["computer"]) {
+    gameResult = "Sorry! You Lost!";
+  } else {
+    gameResult = "It's a tie!";
+  }
+
+  return gameResult;
+}
 
 function main() {
   const computerChoice = getComputerChoice();
