@@ -14,9 +14,10 @@ function getComputerChoice() {
  * Returns the result of the rock, paper, scissors round.
  * @param {string} playerChoice Player's choice of rock, paper, or scissors.
  * @param {string} computerChoice Computer's choice of rock, paper, or scissors.
+ * @param {object} scoreBoard Game score board to be updated.
  * @returns {string}
  */
-function playRound(playerChoice, computerChoice) {
+function playRound(playerChoice, computerChoice, scoreBoard) {
   const ruleSet = {
     ROCK: "PAPER",
     PAPER: "SCISSORS",
@@ -28,8 +29,10 @@ function playRound(playerChoice, computerChoice) {
     result = `${playerChoice} and ${computerChoice}. It's a tie!`;
   } else if (ruleSet[playerChoice] == computerChoice) {
     result = `You Lose! ${computerChoice} beats ${playerChoice}.`;
+    scoreBoard["computer"]++;
   } else {
     result = `You Win! ${playerChoice} beats ${computerChoice}.`;
+    scoreBoard["player"]++;
   }
   return result;
 }
