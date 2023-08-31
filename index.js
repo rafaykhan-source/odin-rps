@@ -56,7 +56,7 @@ function getGameResult(scoreBoard) {
   return gameResult;
 }
 
-function main() {
+function playGame() {
   const scoreBoard = {
     computer: 0,
     player: 0,
@@ -74,4 +74,4 @@ function main() {
   console.log(gameResult);
 }
 
-main();
+playGame();
